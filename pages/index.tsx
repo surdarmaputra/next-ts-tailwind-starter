@@ -1,6 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
+import ArrowNarrowRightIcon from '~icons/tabler/arrow-narrow-right';
+
 const documentationLinks = [
   {
     title: 'Next.js Documentation',
@@ -28,13 +30,16 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="w-4/5 mx-auto">
-        <h1 className="text-2xl text-center">Next.js TS Tailwind Starter</h1>
+        <h1 className="text-center">Next.js TS Tailwind Starter</h1>
 
         <div className="grid grid-cols-2 gap-2">
           {documentationLinks.map(({ title, description, href }, index) => (
             <div className="mt-16 border-2 rounded-md p-4" key={index}>
               <a className="w-" href={href} rel="noreferrer" target="_blank">
-                <h2>{title} &rarr;</h2>
+                <h4 className="flex items-end">
+                  {title}
+                  <ArrowNarrowRightIcon className="ml-2" />
+                </h4>
                 <p>{description}</p>
               </a>
             </div>
