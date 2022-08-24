@@ -1,6 +1,21 @@
 {
   "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
   "plugins": ["@typescript-eslint", "simple-import-sort"],
+  "overrides": [
+    {
+      "files": ["**/*.stories.tsx"],
+      "rules": {
+        "import/no-anonymous-default-export": "off",
+        "@typescript-eslint/no-unused-vars": "off"
+      }
+    },
+    {
+      "files": ["**/*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ],
   "rules": {
     "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
     "@typescript-eslint/member-delimiter-style": [
