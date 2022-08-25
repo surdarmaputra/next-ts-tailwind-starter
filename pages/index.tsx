@@ -98,7 +98,12 @@ const Home: NextPage = () => {
             </li>
           ))}
         </ul>
-        <Button variation="dark">
+        <Button
+          external
+          href={process.env.NEXT_PUBLIC_DEMO_STORYBOOK_URL}
+          link
+          variation="dark"
+        >
           Explore The Storybook <ArrowNarrowRightIcon className="ml-2" />
         </Button>
       </section>
