@@ -12,11 +12,10 @@ module.exports = {
     extend: {
       colors: {
         dark: colors.slate,
-        primary: colors.indigo,
+        primary: colors.sky,
         success: colors.emerald,
         danger: colors.rose,
         warning: colors.amber,
-        info: colors.sky,
       },
     },
   },

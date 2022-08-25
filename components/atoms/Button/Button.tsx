@@ -1,5 +1,3 @@
-import './Button.css';
-
 import classNames from 'classnames';
 import NextLink from 'next/link';
 
@@ -10,7 +8,6 @@ export enum ButtonVariation {
   success = 'success',
   danger = 'danger',
   warning = 'warning',
-  info = 'info',
   light = 'light',
   dark = 'dark',
 }
@@ -39,7 +36,6 @@ const backgroundClassNames = {
     [ButtonVariation.success]: 'bg-success-500 hover:bg-success-600',
     [ButtonVariation.danger]: 'bg-danger-500 hover:bg-danger-600',
     [ButtonVariation.warning]: 'bg-warning-500 hover:bg-warning-600',
-    [ButtonVariation.info]: 'bg-info-500 hover:bg-info-600',
     [ButtonVariation.light]: 'bg-dark-100 hover:bg-dark-200',
     [ButtonVariation.dark]: 'bg-dark-800 hover:bg-dark-900',
   },
@@ -48,7 +44,6 @@ const backgroundClassNames = {
     [ButtonVariation.success]: 'bg-success-400',
     [ButtonVariation.danger]: 'bg-danger-400',
     [ButtonVariation.warning]: 'bg-warning-400',
-    [ButtonVariation.info]: 'bg-info-400',
     [ButtonVariation.light]: 'bg-dark-50',
     [ButtonVariation.dark]: 'bg-dark-500',
   },
@@ -59,7 +54,6 @@ const borderClassNames = {
     [ButtonVariation.success]: 'border-success-500 hover:border-success-600',
     [ButtonVariation.danger]: 'border-danger-500 hover:border-danger-600',
     [ButtonVariation.warning]: 'border-warning-500 hover:border-warning-600',
-    [ButtonVariation.info]: 'border-info-500 hover:border-info-600',
     [ButtonVariation.light]: 'border-dark-100 hover:border-dark-200',
     [ButtonVariation.dark]: 'border-dark-800 hover:border-dark-900',
   },
@@ -68,7 +62,6 @@ const borderClassNames = {
     [ButtonVariation.success]: 'border-success-400',
     [ButtonVariation.danger]: 'border-danger-400',
     [ButtonVariation.warning]: 'border-warning-400',
-    [ButtonVariation.info]: 'border-info-400',
     [ButtonVariation.light]: 'border-dark-50',
     [ButtonVariation.dark]: 'border-dark-500',
   },
@@ -79,7 +72,6 @@ const outlineClassNames = {
     [ButtonVariation.success]: 'text-success-500 hover:bg-success-600',
     [ButtonVariation.danger]: 'text-danger-500 hover:bg-danger-600',
     [ButtonVariation.warning]: 'text-warning-500 hover:bg-warning-600',
-    [ButtonVariation.info]: 'text-info-500 hover:bg-info-600',
     [ButtonVariation.light]: 'text-dark-500 hover:bg-dark-200',
     [ButtonVariation.dark]: 'text-dark-800 hover:bg-dark-900',
   },
@@ -88,7 +80,6 @@ const outlineClassNames = {
     [ButtonVariation.success]: 'text-success-400',
     [ButtonVariation.danger]: 'text-danger-400',
     [ButtonVariation.warning]: 'text-warning-400',
-    [ButtonVariation.info]: 'text-info-400',
     [ButtonVariation.light]: 'text-dark-50',
     [ButtonVariation.dark]: 'text-dark-500',
   },
@@ -150,7 +141,7 @@ export function Button({
         {loading ? (
           <>
             <LoaderIcon className="absolute animate-spin" />
-            <div className="flex justify-center items-end opacity-40">
+            <div className="flex items-end justify-center opacity-40">
               {children}
             </div>
           </>
