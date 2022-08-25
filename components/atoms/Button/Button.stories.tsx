@@ -33,7 +33,7 @@ export const Sizes = (args) => (
   <>
     {Object.values(ButtonVariation).map((variation, variationIndex) => (
       <div
-        className="flex flex-wrap items-center space-x-2 mb-4"
+        className="mb-4 flex flex-wrap items-center space-x-2"
         key={variationIndex}
       >
         {Object.values(ButtonSize).map((size, sizeIndex) => (
@@ -51,7 +51,7 @@ export const Outline = (args) => (
   <>
     {Object.values(ButtonVariation).map((variation, variationIndex) => (
       <div
-        className="flex flex-wrap items-center space-x-2 mb-4"
+        className="mb-4 flex flex-wrap items-center space-x-2"
         key={variationIndex}
       >
         {Object.values(ButtonSize).map((size, sizeIndex) => (
@@ -72,7 +72,7 @@ export const Outline = (args) => (
 // @ts-expect-error unused args for native HTML element playground
 export const Disabled = (args) => (
   <>
-    <div className="flex flex-wrap items-end space-x-2 space-y-2 mb-4">
+    <div className="mb-4 flex flex-wrap items-end space-x-2 space-y-2">
       {Object.values(ButtonVariation).map((variation, index) => (
         <Button disabled key={index} variation={variation}>
           {variation}
@@ -92,34 +92,34 @@ export const Disabled = (args) => (
 // @ts-expect-error unused args for native HTML element playground
 export const WithIcon = (args) => (
   <>
-    <div className="flex flex-wrap items-center space-x-2 mb-4">
+    <div className="mb-4 flex flex-wrap items-center space-x-2">
       {Object.values(ButtonSize).map((size, index) => (
         <Button key={index} size={size}>
           Register now
-          <ArrowNarrowRightIcon className="block ml-4" />
+          <ArrowNarrowRightIcon className="ml-4 block" />
         </Button>
       ))}
     </div>
-    <div className="flex flex-wrap items-center space-x-2 mb-4">
+    <div className="mb-4 flex flex-wrap items-center space-x-2">
       {Object.values(ButtonSize).map((size, index) => (
         <Button key={index} outline size={size}>
           Register now
-          <ArrowNarrowRightIcon className="block ml-4" />
+          <ArrowNarrowRightIcon className="ml-4 block" />
         </Button>
       ))}
     </div>
-    <div className="flex flex-wrap items-center space-x-2 mb-4">
+    <div className="mb-4 flex flex-wrap items-center space-x-2">
       {Object.values(ButtonSize).map((size, index) => (
         <Button key={index} size={size}>
-          <ArrowDownCircleIcon className="block mr-4" />
+          <ArrowDownCircleIcon className="mr-4 block" />
           Download here
         </Button>
       ))}
     </div>
-    <div className="flex flex-wrap items-center space-x-2 mb-4">
+    <div className="mb-4 flex flex-wrap items-center space-x-2">
       {Object.values(ButtonSize).map((size, index) => (
         <Button key={index} outline size={size}>
-          <ArrowDownCircleIcon className="block mr-4" />
+          <ArrowDownCircleIcon className="mr-4 block" />
           Download here
         </Button>
       ))}
@@ -130,7 +130,7 @@ export const WithIcon = (args) => (
 // @ts-expect-error unused args for native HTML element playground
 export const Link = (args) => (
   <>
-    <div className="flex flex-wrap items-center space-x-2 mb-4">
+    <div className="mb-4 flex flex-wrap items-center space-x-2">
       <Button
         external
         href="https://duckduckgo.com"
@@ -140,7 +140,7 @@ export const Link = (args) => (
         title="Search engine"
       >
         Open in new tab
-        <ArrowNarrowRightIcon className="block ml-4" />
+        <ArrowNarrowRightIcon className="ml-4 block" />
       </Button>
       <Button
         disabled
@@ -152,13 +152,13 @@ export const Link = (args) => (
         title="Search engine"
       >
         Open in new tab
-        <ArrowNarrowRightIcon className="block ml-4" />
+        <ArrowNarrowRightIcon className="ml-4 block" />
       </Button>
     </div>
-    <div className="flex flex-wrap items-center space-x-2 mb-4">
+    <div className="mb-4 flex flex-wrap items-center space-x-2">
       <Button external href="https://duckduckgo.com" link outline size="large">
         Open in current tab
-        <ArrowNarrowRightIcon className="block ml-4" />
+        <ArrowNarrowRightIcon className="ml-4 block" />
       </Button>
       <Button
         disabled
@@ -169,17 +169,17 @@ export const Link = (args) => (
         size="large"
       >
         Open in current tab
-        <ArrowNarrowRightIcon className="block ml-4" />
+        <ArrowNarrowRightIcon className="ml-4 block" />
       </Button>
     </div>
-    <div className="flex flex-wrap items-center space-x-2 mb-4">
+    <div className="mb-4 flex flex-wrap items-center space-x-2">
       <Button href="/about" link outline size="large" variation="dark">
         Next Link
-        <ArrowNarrowRightIcon className="block ml-4" />
+        <ArrowNarrowRightIcon className="ml-4 block" />
       </Button>
       <Button disabled href="/about" link outline size="large" variation="dark">
         Next Link
-        <ArrowNarrowRightIcon className="block ml-4" />
+        <ArrowNarrowRightIcon className="ml-4 block" />
       </Button>
     </div>
   </>
@@ -188,14 +188,14 @@ export const Link = (args) => (
 // @ts-expect-error unused args for native HTML element playground
 export const Loading = (args) => (
   <>
-    <div className="flex flex-wrap items-center space-x-2 mb-4">
+    <div className="mb-4 flex flex-wrap items-center space-x-2">
       <Button loading>Submitting</Button>
       <Button loading outline>
         Submitting
       </Button>
       <Button loading variation="dark">
         Submitting
-        <ArrowNarrowRightIcon className="block ml-4" />
+        <ArrowNarrowRightIcon className="ml-4 block" />
       </Button>
       <Button disabled loading variation="success">
         Submitting
