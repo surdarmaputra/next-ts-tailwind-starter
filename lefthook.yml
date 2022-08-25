@@ -7,7 +7,7 @@ pre-commit:
   commands:
     format:
       glob: '*.{js,ts,tsx,yml}'
-      run: yarn format:fix {staged_files}
+      run: yarn format {staged_files}
     lint:
       glob: '*.{js,ts,tsx}'
       run: yarn lint:fix {staged_files}
