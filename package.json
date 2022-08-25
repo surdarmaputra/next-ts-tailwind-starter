@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
+    "build-demo": "next build && next export",
     "dev": "next dev",
     "format": "prettier --write",
     "lint": "eslint --max-warnings=0",
@@ -11,7 +12,7 @@
     "release": "standard-version",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook:build": "build-storybook"
   },
   "dependencies": {
     "classnames": "^2.3.1",
