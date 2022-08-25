@@ -1,20 +1,73 @@
+import { Button } from 'components/atoms/Button';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
 import ArrowNarrowRightIcon from '~icons/tabler/arrow-narrow-right';
+import CheckIcon from '~icons/tabler/check';
 
-const documentationLinks = [
-  {
-    title: 'Next.js Documentation',
-    description: 'Find in-depth information about Next.js features and API.',
-    href: 'https://nextjs.org/docs',
-  },
-  {
-    title: 'Tailwind CSS Documentation',
-    description:
-      'Find in-depth information about Tailwind CSS features and API.',
-    href: 'https://tailwindcss.com/docs',
-  },
+const features = [
+  'TypeScript',
+  'Tailwind CSS with pre-configured colors',
+  <span key="atomic-design">
+    Basic components following{' '}
+    <a
+      href="https://bradfrost.com/blog/post/atomic-web-design/"
+      rel="noreferrer"
+      target="_blank"
+    >
+      atomic design
+    </a>{' '}
+    concept
+  </span>,
+  'Storybook',
+  <span key="unplugin-icons">
+    Access thousands of icons using{' '}
+    <a
+      href="https://github.com/antfu/unplugin-icons"
+      rel="noreferrer"
+      target="_blank"
+    >
+      unplugin-icons
+    </a>
+  </span>,
+  <span key="commitlint">
+    Make sure commit messages meet{' '}
+    <a
+      href="https://www.conventionalcommits.org"
+      rel="noreferrer"
+      target="_blank"
+    >
+      conventional commit
+    </a>{' '}
+    format using{' '}
+    <a
+      href="https://github.com/conventional-changelog/commitlint"
+      rel="noreferrer"
+      target="_blank"
+    >
+      commitlint
+    </a>
+  </span>,
+  <span key="lefthook">
+    Run formatters and linters within Git hooks using{' '}
+    <a
+      href="https://github.com/evilmartians/lefthook"
+      rel="noreferrer"
+      target="_blank"
+    >
+      lefthook
+    </a>
+  </span>,
+  <span key="standard-version">
+    Manage release using{' '}
+    <a
+      href="https://github.com/conventional-changelog/standard-version"
+      rel="noreferrer"
+      target="_blank"
+    >
+      standard-version
+    </a>
+  </span>,
 ];
 
 const Home: NextPage = () => {
@@ -29,23 +82,28 @@ const Home: NextPage = () => {
         <link href="/favicon.ico" rel="icon" />
       </Head>
 
-      <main className="w-4/5 mx-auto">
-        <h1 className="text-center">Next.js TS Tailwind Starter</h1>
-
-        <div className="grid grid-cols-2 gap-2">
-          {documentationLinks.map(({ title, description, href }, index) => (
-            <div className="mt-16 border-2 rounded-md p-4" key={index}>
-              <a className="w-" href={href} rel="noreferrer" target="_blank">
-                <h4 className="flex items-end">
-                  {title}
-                  <ArrowNarrowRightIcon className="ml-2" />
-                </h4>
-                <p>{description}</p>
-              </a>
-            </div>
+      <section className="container mx-auto py-40">
+        <h1 className="mb-4">Next.js TS Tailwind Starter</h1>
+        <p className="text-dark-600">
+          Starter kit to speed up the development of Next.js project.
+        </p>
+        <ul className="mb-12">
+          {features.map((feature, index) => (
+            <li className="flex items-end" key={index}>
+              <CheckIcon className="mr-2 text-success-500" />
+              {feature}
+            </li>
           ))}
-        </div>
-      </main>
+        </ul>
+        <Button variation="dark">
+          Explore The Storybook <ArrowNarrowRightIcon className="ml-2" />
+        </Button>
+      </section>
+
+      <footer className="container mx-auto py-8">
+        &copy; 2022 | Created by{' '}
+        <a href="https://github.com/surdarmaputra/">Surya Darma Putra</a>
+      </footer>
     </>
   );
 };
