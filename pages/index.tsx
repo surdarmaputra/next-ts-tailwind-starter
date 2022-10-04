@@ -90,7 +90,7 @@ const Home: NextPage = () => {
 
       <section className="container mx-auto py-40 px-6">
         <h1 className="mb-4">Next.js TS Tailwind Starter</h1>
-        <p className="text-dark-600">
+        <p className="text-dark-600 dark:text-dark-300">
           Starter kit to speed up the development of Next.js project.
         </p>
         <ul className="mb-12">
