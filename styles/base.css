@@ -3,9 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply text-dark-700;
-}
-
-.dark {
-  @apply bg-dark-900;
+  @apply bg-white text-dark-700 dark:bg-dark-900 dark:text-dark-300;
 }

@@ -4,7 +4,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply mb-4 font-bold text-dark-900;
+  @apply mb-4 font-bold text-dark-900 dark:text-dark-100;
 }
 
 h1 {
@@ -29,8 +29,4 @@ h5 {
 
 h6 {
   @apply text-base;
-}
-
-.test-heading {
-  @apply mb-4;
 }

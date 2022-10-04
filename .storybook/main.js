@@ -9,7 +9,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    'storybook-tailwind-dark-mode',
+    'storybook-dark-mode',
   ],
   framework: '@storybook/react',
   core: {
@@ -21,12 +21,19 @@ module.exports = {
       use: ['postcss-loader'],
       include: path.resolve(__dirname, '../'),
     });
+
     config.plugins.push(
       require('unplugin-icons/webpack')({
         compiler: 'jsx',
         jsx: 'react',
       }),
     );
+
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      components: path.resolve(__dirname, '../components'),
+      providers: path.resolve(__dirname, '../providers'),
+    };
 
     return config;
   },

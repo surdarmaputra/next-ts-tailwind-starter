@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import NextLink from 'next/link';
 
-import LoaderIcon from '~icons/tabler/loader-2';
+import LoaderIcon from '~icons/tabler/loader-2.tsx';
 
 export enum ButtonVariation {
   primary = 'primary',
@@ -25,6 +25,7 @@ export interface ButtonProps
   link?: boolean;
   loading?: boolean;
   outline?: boolean;
+  rounded?: boolean;
   size?: `${ButtonSize}`;
   target?: string;
   variation?: `${ButtonVariation}`;
@@ -36,16 +37,18 @@ const backgroundClassNames = {
     [ButtonVariation.success]: 'bg-success-500 hover:bg-success-600',
     [ButtonVariation.danger]: 'bg-danger-500 hover:bg-danger-600',
     [ButtonVariation.warning]: 'bg-warning-500 hover:bg-warning-600',
-    [ButtonVariation.light]: 'bg-dark-100 hover:bg-dark-200',
-    [ButtonVariation.dark]: 'bg-dark-800 hover:bg-dark-900',
+    [ButtonVariation.light]:
+      'bg-dark-50 hover:bg-dark-100 text-dark-900 dark:bg-dark-700 dark:text-dark-100 dark:hover:bg-dark-800',
+    [ButtonVariation.dark]:
+      'bg-dark-800 hover:bg-dark-900 dark:bg-dark-200 dark:hover:bg-white dark:text-black',
   },
   disabled: {
     [ButtonVariation.primary]: 'bg-primary-400',
     [ButtonVariation.success]: 'bg-success-400',
     [ButtonVariation.danger]: 'bg-danger-400',
     [ButtonVariation.warning]: 'bg-warning-400',
-    [ButtonVariation.light]: 'bg-dark-50',
-    [ButtonVariation.dark]: 'bg-dark-500',
+    [ButtonVariation.light]: 'bg-dark-50 dark:bg-dark-700 dark:text-dark-400',
+    [ButtonVariation.dark]: 'bg-dark-500 dark:bg-dark-300 dark:text-dark-600',
   },
 };
 const borderClassNames = {
@@ -54,16 +57,19 @@ const borderClassNames = {
     [ButtonVariation.success]: 'border-success-500 hover:border-success-600',
     [ButtonVariation.danger]: 'border-danger-500 hover:border-danger-600',
     [ButtonVariation.warning]: 'border-warning-500 hover:border-warning-600',
-    [ButtonVariation.light]: 'border-dark-100 hover:border-dark-200',
-    [ButtonVariation.dark]: 'border-dark-800 hover:border-dark-900',
+    [ButtonVariation.light]:
+      'border-dark-50 hover:border-dark-100 dark:border-dark-700 dark:hover:border-dark-800',
+    [ButtonVariation.dark]:
+      'border-dark-800 hover:border-dark-900 dark:border-dark-200 dark:hover:border-white',
   },
   disabled: {
     [ButtonVariation.primary]: 'border-primary-400',
     [ButtonVariation.success]: 'border-success-400',
     [ButtonVariation.danger]: 'border-danger-400',
     [ButtonVariation.warning]: 'border-warning-400',
-    [ButtonVariation.light]: 'border-dark-50',
-    [ButtonVariation.dark]: 'border-dark-500',
+    [ButtonVariation.light]:
+      'border-dark-50 text-dark-300 dark:border-dark-700',
+    [ButtonVariation.dark]: 'border-dark-500 dark:border-dark-400',
   },
 };
 const outlineClassNames = {
@@ -72,8 +78,10 @@ const outlineClassNames = {
     [ButtonVariation.success]: 'text-success-500 hover:bg-success-600',
     [ButtonVariation.danger]: 'text-danger-500 hover:bg-danger-600',
     [ButtonVariation.warning]: 'text-warning-500 hover:bg-warning-600',
-    [ButtonVariation.light]: 'text-dark-500 hover:bg-dark-200',
-    [ButtonVariation.dark]: 'text-dark-800 hover:bg-dark-900',
+    [ButtonVariation.light]:
+      'text-dark-900 dark:text-dark-400 dark:hover:text-dark-100 hover:bg-dark-100 dark:hover:bg-dark-800',
+    [ButtonVariation.dark]:
+      'text-dark-800 dark:border-dark-200 dark:text-dark-100 hover:bg-dark-900 dark:hover:text-dark-900 dark:hover:bg-white',
   },
   disabled: {
     [ButtonVariation.primary]: 'text-primary-400',
@@ -95,6 +103,7 @@ export default function Button({
   loading = false,
   onClick,
   outline = false,
+  rounded = false,
   size = ButtonSize.default,
   target,
   title,
@@ -110,10 +119,17 @@ export default function Button({
     ? outlineClassNames.disabled[variation]
     : outlineClassNames.normal[variation];
   const sizeClassName = classNames({
-    'px-4 py-2 text-xs rounded': size === ButtonSize.small,
-    'px-6 py-3 text-sm rounded-md': size === ButtonSize.default,
-    'px-10 py-4 text-base rounded-lg': size === ButtonSize.large,
+    'px-4 py-2 text-xs': size === ButtonSize.small,
+    'px-6 py-3 text-sm': size === ButtonSize.default,
+    'px-10 py-4 text-base': size === ButtonSize.large,
   });
+  const roundedClassName = rounded
+    ? 'rounded-full'
+    : classNames({
+        rounded: size === ButtonSize.small,
+        'rounded-md': size === ButtonSize.default,
+        'rounded-lg': size === ButtonSize.large,
+      });
   const finalClassName = `
     ${classNames({
       'button transition': true,
@@ -127,6 +143,7 @@ export default function Button({
     ${borderClassName}
     ${sizeClassName}
     ${outline ? outlineClassName : backgroundClassName}
+    ${roundedClassName}
     ${className}
   `;
 
