@@ -2,7 +2,7 @@ import Button from 'components/atoms/Button';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import HomeIcon from '~icons/tabler/home';
+import HomeIcon from '~icons/tabler/home.tsx';
 
 const ServerError: NextPage = () => {
   return (

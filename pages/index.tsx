@@ -3,8 +3,9 @@ import Header from 'components/organisms/Header';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import ArrowNarrowRightIcon from '~icons/tabler/arrow-narrow-right';
-import CheckIcon from '~icons/tabler/check';
+import ArrowNarrowRightIcon from '~icons/tabler/arrow-narrow-right.tsx';
+import BrandGithubIcon from '~icons/tabler/brand-github.tsx';
+import CheckIcon from '~icons/tabler/check.tsx';
 
 const features = [
   'TypeScript',
@@ -88,30 +89,41 @@ const Home: NextPage = () => {
 
       <Header />
 
-      <section className="container mx-auto py-40 px-6">
+      <section className="container mx-auto py-24 px-6 sm:py-40">
         <h1 className="mb-4">Next.js TS Tailwind Starter</h1>
         <p className="text-dark-600 dark:text-dark-300">
           Starter kit to speed up the development of Next.js project.
         </p>
         <ul className="mb-12">
           {features.map((feature, index) => (
-            <li className="flex items-end" key={index}>
-              <CheckIcon className="mr-2 text-success-500" />
+            <li className="mb-3 flex items-start sm:mb-2" key={index}>
+              <CheckIcon className="mt-1 mr-2 shrink-0 text-success-500" />
               {feature}
             </li>
           ))}
         </ul>
-        <Button
-          external
-          href={process.env.NEXT_PUBLIC_DEMO_STORYBOOK_URL}
-          link
-          variation="dark"
-        >
-          Explore The Storybook <ArrowNarrowRightIcon className="ml-2" />
-        </Button>
+        <div className="flex flex-col space-y-2 space-x-0 sm:flex-row sm:space-x-2 sm:space-y-0">
+          <Button
+            external
+            href="https://github.com/surdarmaputra/next-ts-tailwind-starter"
+            link
+            target="_blank"
+            variation="dark"
+          >
+            View on GitHub <BrandGithubIcon className="ml-2 " />
+          </Button>
+          <Button
+            external
+            href={process.env.NEXT_PUBLIC_DEMO_STORYBOOK_URL}
+            link
+            variation="light"
+          >
+            Explore The Storybook <ArrowNarrowRightIcon className="ml-2" />
+          </Button>
+        </div>
       </section>
 
-      <footer className="container mx-auto py-8">
+      <footer className="container mx-auto py-8 px-6 text-center sm:text-left">
         &copy; 2022 | Created by{' '}
         <a href="https://github.com/surdarmaputra/">Surya Darma Putra</a>
       </footer>

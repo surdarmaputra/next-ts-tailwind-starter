@@ -2,7 +2,7 @@ import Button from 'components/atoms/Button';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import ArrowNarrowLeftIcon from '~icons/tabler/arrow-narrow-left';
+import ArrowNarrowLeftIcon from '~icons/tabler/arrow-narrow-left.tsx';
 
 const NotFound: NextPage = () => {
   return (
