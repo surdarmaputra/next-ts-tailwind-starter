@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import {
   createContext,
   ReactNode,
@@ -6,6 +5,7 @@ import {
   useEffect,
   useState,
 } from 'react';
+import { useRouter } from 'next/router';
 
 export interface ColorModeContextValue {
   dark: boolean;

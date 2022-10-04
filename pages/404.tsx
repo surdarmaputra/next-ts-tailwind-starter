@@ -1,6 +1,7 @@
-import Button from 'components/atoms/Button';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+
+import Button from 'components/atoms/Button';
 
 import ArrowNarrowLeftIcon from '~icons/tabler/arrow-narrow-left.tsx';
 

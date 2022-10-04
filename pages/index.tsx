@@ -1,7 +1,8 @@
-import Button from 'components/atoms/Button';
-import Header from 'components/organisms/Header';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+
+import Button from 'components/atoms/Button';
+import Header from 'components/organisms/Header';
 
 import ArrowNarrowRightIcon from '~icons/tabler/arrow-narrow-right.tsx';
 import BrandGithubIcon from '~icons/tabler/brand-github.tsx';

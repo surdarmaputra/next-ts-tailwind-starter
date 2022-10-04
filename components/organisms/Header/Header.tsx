@@ -1,7 +1,8 @@
-import ColorModeToggle from 'components/atoms/ColorModeToggle';
-import Link from 'next/link';
-import { ColorModeContext } from 'providers/ColorModeProvider';
 import { useContext } from 'react';
+import Link from 'next/link';
+
+import ColorModeToggle from 'components/atoms/ColorModeToggle';
+import { ColorModeContext } from 'providers/ColorModeProvider';
 
 export default function Header() {
   const { dark, toggleColorMode } = useContext(ColorModeContext);
