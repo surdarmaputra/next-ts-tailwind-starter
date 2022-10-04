@@ -33,6 +33,16 @@ cd project_dir_name
 yarn
 ```
 
+Prepare Git hook:
+
+```bash
+# Install hooks
+npx lefthook install
+
+# Test lefthook
+npx lefthook run pre-commit
+```
+
 Run the development server:
 
 ```bash
