@@ -9,11 +9,9 @@ export default function Header() {
 
   return (
     <header className="container mx-auto flex items-center justify-between p-6">
-      <Link href="/">
-        <a className="no-underline">
-          <span className="text-primary-500">Next</span>{' '}
-          <span className="dark:text-dark-100">Starter</span>
-        </a>
+      <Link className="no-underline" href="/">
+        <span className="text-primary-500">Next</span>{' '}
+        <span className="dark:text-dark-100">Starter</span>
       </Link>
       <ColorModeToggle
         className="ml-4"
