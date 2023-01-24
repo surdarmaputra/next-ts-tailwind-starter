@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/surdarmaputra/next-ts-tailwind-starter/compare/v1.0.0...v1.1.0) (2023-01-24)
+
+
+### Features
+
+* upgrade to next.js 13 ([#2](https://github.com/surdarmaputra/next-ts-tailwind-starter/issues/2)) ([ec6d372](https://github.com/surdarmaputra/next-ts-tailwind-starter/commit/ec6d372ccc98e50a34c51f8a8931e2854d97d778))
+
 ## 1.0.0 (2022-10-04)
 
 
