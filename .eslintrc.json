@@ -1,18 +1,24 @@
 {
   "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
   "plugins": ["@typescript-eslint", "simple-import-sort"],
+  "parser": "@typescript-eslint/parser",
   "overrides": [
     {
-      "files": ["**/*.stories.tsx"],
+      "files": ["**/*.config.js"],
       "rules": {
-        "import/no-anonymous-default-export": "off",
-        "@typescript-eslint/no-unused-vars": "off"
+        "@typescript-eslint/no-var-requires": "off"
       }
     },
     {
-      "files": ["**/*.js"],
+      "files": ["api/generated/**/*.ts"],
       "rules": {
-        "@typescript-eslint/no-var-requires": "off"
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    },
+    {
+      "files": ["jest.config.mjs"],
+      "rules": {
+        "import/no-anonymous-default-export": "off"
       }
     }
   ],
@@ -78,8 +84,8 @@
           // Packages
           // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
           ["^@?\\w"],
-          // Absolute imports for internal dependencies.
-          ["^components", "^core", "^hooks", "^providers", "^utils"],
+          // Path alias internal dependencies.
+          ["^@/?\\w"],
           // Anything not matched in another group.
           ["^"],
           // Relative imports. Anything that starts with a dot.

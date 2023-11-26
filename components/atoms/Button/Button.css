@@ -1,7 +1,0 @@
-.button {
-  @apply flex items-end justify-center border font-semibold no-underline;
-}
-
-a.button {
-  @apply inline-flex;
-}
